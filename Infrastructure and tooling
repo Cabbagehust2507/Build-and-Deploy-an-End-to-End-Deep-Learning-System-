@@ -1,0 +1,25 @@
+CTC loss, training with CTC loss
+Sequence modeling with CTC
+-------------------
+"All-in-one"
+Data => Development => Training/Evaluation => Deployment
+---------------
+Docker + Kubernetes:
+* Docker is a way to package up an entire dependency stack in a lighter-than-a-VM package.
+* Kubernetes is a way to run many docker containers on top of a cluster.
+-------------
+Hyperparameter Optimization
+- Hyperas
+- Talos
+- .sigopt: improve ML models faster
+- Weights & biases
+--------------
+"All-in-one" solutions
+Recent trend: single system for everything
+- development
+- scaling experiments to many machines (sometimes with AutoML)
+- versioning models & reviewing results
+- deploying the trained model
+- monitoring performance
+-----------
+Neptune: Machine Learning Lab
