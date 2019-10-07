@@ -1,3 +1,58 @@
 """
 CTC loss: more details at here: https://distill.pub/2017/ctc/
 """
+-----------TEXT RECOGNIZER PROJECT------------
+Overview of project:
+  Input: Images with texts inside.
+  Output: The texts in images.
+  Main components:
+    1. Images
+    2. Web backend
+      - "POST" request
+      - Decoding Image
+      - Encode response
+    3. Complied prediction model
+      - Line detector
+      - Line text-recognizer
+    4. Model training
+      - Data set: Text pages, line labels, line images, decoded text.
+      - Training code
+      - Model weights (.h5)
+    5. Output
+ 
+The flow of work:
+1. First stage: Training
+                         Dataset         ||
+Model training:                          || ===> Model weights
+                         Training code   || 
+    v
+    v
+Complied prediction model
+
+2. Second stage: Recognition
+                  Image
+                    v
+                "POST" request
+                    v
+                Decode Image
+                    v
+                Line Detector
+                    v
+                Line Text-Recognizer
+                    v
+                Encode response
+                    v
+                 Output
+ -------------------------------------------------------------------------------
+ Note: 
+   If using Tensorflow, you need to use the same version Tensorflow for all files in project.
+   When predict a line text, it depends on context.
+   If window hold all of components of a word, you need to take a window with smaller size.
+   
+ ***CTC Loss***
+ CTC Loss - Connectionist Temporal Classification Loss
+ How it works:
+  1. CTC network assigns the character with the highest probability (or no character) to every input sequence.
+  2. Repeats without a blank token in between get merged
+  3. The blank token get removed => Output
+ 
