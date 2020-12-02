@@ -1,0 +1,8 @@
+# Some Q&A
+
+1. lmdb convert data slowly!
+That's expected. 
+Iteration is going to always be faster, because the keys are going to be next together on disk and in memory,
+so your operating system's and storage system's read-ahead is going to load the next key while you're doing other stuff.
+This is particularly true for spinning disks, where random access is 100x slow than serial access.
+LMDB is going to be slow if either you have more data than RAM, or you have spinning disk storage.
